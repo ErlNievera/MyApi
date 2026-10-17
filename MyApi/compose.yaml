@@ -29,19 +29,18 @@ services:
       retries: 10
       start_period: 30s
 
+    
   api:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: myapi-app
     environment:
       ASPNETCORE_URLS: http://+:8080
       ConnectionStrings__DefaultConnection: "Server=db,1433;Database=MyApiDb;User Id=sa;Password=${SA_PASSWORD};TrustServerCertificate=True;Encrypt=False"
-    ports:
-      - "8080:8080"
     depends_on:
       db:
         condition: service_healthy
+
 
   redis:
     image: redis:7-alpine
