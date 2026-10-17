@@ -1,0 +1,9 @@
+﻿**/bin/
+**/obj/
+**/.vs/
+**/.vscode/
+**/.git/
+**/.env
+**/.env.*
+!**/.env.example
+**/appsettings.*.json
